@@ -1,0 +1,7 @@
+20:31:29.586 [main] WARN com.baeldung.logback - This message is logged because WARN > INFO.
+20:31:29.594 [main] INFO com.baeldung.logback.tests - INFO == INFO
+20:44:44.241 [main] DEBUG com.baeldung.logback - Hi there!
+20:44:44.243 [main] DEBUG com.baeldung.logback - This message is logged because DEBUG == DEBUG.
+20:44:44.243 [main] ERROR com.baeldung.logback - This is logged.
+
+This is sample for log4j 
