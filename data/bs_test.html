@@ -4,15 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* 선택자: 태그선택자, 클래스 선택자, 아이디 선택자
+                  부모 자식 선택자 할아버지 손자
+                  속성선택자 (input) 형제 선택자 */
+        h2>span {
+            background-color: yellowgreen;
+        }
+        ul a {
+            color: red
+        }
+    </style>
 </head>
 <body>
     
-    <div class="wrapper">
+    <div class="clock wall">
+
+    </div>
+    <div class="clock hand">
+
+    </div>
+
+    <div class="wrapper tophead">
         <div id="header">
             <header>
-                <h2>My Blog</h2>
+                <h2>
+                    <span>My Blog</span>
+                </h2>
+                
+                <ul id="menu">
+
+                    <li class="subject">
+                        <a href="#">HOME</a></li>
+                    <li class="subject">INTRO</li>
+                    <li class="subject">SERVICE</li>
+                    <li class="subject">NOTICE</li>
+                    <li class="subject">CONTACT</li>
+
+                </ul>
             </header>
         </div>
+
+        <p class="today">오늘</p>
+        <p class="tommorow">내일</p>
+        <p class="1234">날짜숫자</p>
     </div>
 </body>
 </html>
