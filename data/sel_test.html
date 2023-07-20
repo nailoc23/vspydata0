@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+
+        <p><img id='light' src="light_off.png" alt=""></p>
+        <p>
+            <input type="button" value="전구켜기" onclick="light_on();">
+            <input type="button" value="전구끄기" onclick="light_off();">
+        </p>
+
+    </div>
+
+    <script>
+        function light_on() {
+            ok = confirm("전구를 켤까요?");
+            if(ok==true) {
+                document.getElementById('light').src = 'light_on.jpg'
+            }
+        }
+
+        function light_off() {
+            ok=confirm("전구를 끌까요?");
+            if(ok==true) {
+                document.getElementById('light').src = 'light_off.png'
+            }
+        }
+    </script>
+</body>
+</html>

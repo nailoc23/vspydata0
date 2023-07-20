@@ -13,9 +13,15 @@ soup = BeautifulSoup(html_doc, 'html.parser')
 # print(soup.prettify())
 div_genres = soup.find('div', class_='wrap_tabmenu_sub')
 dd_genres = div_genres.find_all('dd')
+urls = {}
 for dd_genre in dd_genres:
     lies = dd_genre.select('li')
     for li in lies:
-        print(li.get_text().strip()) # 장르이름
+        gname = li.get_text().strip()
+        key = gname
         URL = 'https://www.melon.com' + li.find('a').get('href').strip()
-        print(URL)
+        value = URL
+        urls[key] = value     
+           
+print(urls)
+        
