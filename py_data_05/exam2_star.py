@@ -11,23 +11,41 @@ driver = webdriver.Chrome()
 URL = 'https://www.starbucks.co.kr/index.do'
 driver.get(URL)
 
-time.sleep(1)
+time.sleep(2)
 gnb_store = driver.find_element(By.CSS_SELECTOR, '.gnb_nav03 a')
 gnb_store.click()
 
-time.sleep(1)
+time.sleep(2)
 store_btn = driver.find_element(By.CSS_SELECTOR, 'div.store_bn1_btn>a')
 store_btn.click()
 
 #페이지 이동됨
+URL2 = 'https://www.starbucks.co.kr/store/store_map.do'
+print(URL2)
+driver.quit()
+driver2 = webdriver.Chrome()
+driver2.get(URL2)
 
-time.sleep(1)
-local_taB = driver.find_element(By.CSS_SELECTOR, 'header.loca_search a')
+time.sleep(3)
+local_taB = driver2.find_element(By.CSS_SELECTOR, 'header.loca_search a')
 local_taB.click() #지역검색
 
-time.sleep(1)
-sidoes = driver.find_element(By.CLASS_NAME, 'sido_arae_box')
+time.sleep(3)
+sidoes = driver2.find_element(By.CLASS_NAME, 'sido_arae_box')
 seoul_li = sidoes.find_elements(By.TAG_NAME, 'li')
 seoul_li[0].click() # 시도 (서울)
+
+time.sleep(3)
+gugun = driver2.find_element(By.CLASS_NAME, 'gugun_arae_box')
+yongdungpo_li = gugun.find_elements(By.TAG_NAME, 'li')
+yongdungpo_li[20].click() # 데이터를 가져오는데 시간이 걸림
+time.sleep(3)
+
+#크롤링 시작
+html_doc = driver2.page_source
+soup = BeautifulSoup(html_doc, 'html.parser')
+quickresult = soup.find('ul', class_='quickSearchResultBoxSidoGugun')
+starbuck_stores = quickresult.find_all('li')
+print('갯수:', len(starbuck_stores))
 
 time.sleep(10)
