@@ -17,7 +17,7 @@ time.sleep(2)
 input_search = driver.find_element(By.NAME, 'search_query')
 
 input_search.click()
-input_search.send_keys('piano')
+input_search.send_keys('피아노')
 
 time.sleep(2)
 btn_search = driver.find_element(By.ID, 'search-icon-legacy')
