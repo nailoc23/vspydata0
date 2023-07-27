@@ -11,6 +11,10 @@ df = pd.DataFrame(
 # 컬럼명변경 rename
 #df.index = ['A', 'B']
 df.columns = ['한국','중국','일본']
-print(df)
-#print(df.loc['A'])
-print(df.iloc[0])
+df2 = pd.DataFrame({
+    '한국': [30,30], '중국':[50,50], '일본': [100,100]
+})
+# print(df)
+# print(df2)
+print(df.append(df2, ignore_index=True))
+
